@@ -1,0 +1,9 @@
+{
+    "name": "huobi-c2c-usdt",
+    "source": "https://otc.huobi.pro/trade/list.html?coin=2&type=1",
+    "interval": 120,
+    "trigger": {
+        "cond": "<=",
+        "value": 6.85
+    }
+}

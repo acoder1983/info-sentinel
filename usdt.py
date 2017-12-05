@@ -14,7 +14,7 @@ class UsdtTarget(Target):
         self.name = 'huobi-usdt'
         self.source = "https://otc.huobi.pro/trade/list.html?coin=2&type=1"
         self.interval = 300
-        self.trigger = Trigger([("<=", 6.9)])
+        self.trigger = Trigger([("<=", 6.71)])
 
     def _get_from_source(self):
         user_agent = 'Mozilla/5.0 (Windows NT 6.1; Win64; x64)'

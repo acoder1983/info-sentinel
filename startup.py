@@ -8,6 +8,7 @@ def main():
     target = targets[0]
     while True:
         target.update()
+        print('update target')
         time.sleep(target.interval)
 
 

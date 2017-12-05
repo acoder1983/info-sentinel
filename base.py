@@ -31,7 +31,6 @@ class Target:
         db = client.sentinel
         db[self.name].insert_one({'timestamp': datetime.now(),
                                   'value': cur_val})
-
         if self.trigger.triggered(cur_val):
             self._action(cur_val)
 

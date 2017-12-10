@@ -24,7 +24,7 @@ class Stock(Target):
 class Hzsy(Stock):
     def __init__(self):
         Stock.__init__(self, 'stock-hzsy', 300,
-                       Trigger([("<", 7.0), (">", 8.5)]), 'SSE601313')
+                       Trigger([("<", 7.0), (">", 8.5)]), 'SSE600191')
 
 
 class Qsgf(Stock):

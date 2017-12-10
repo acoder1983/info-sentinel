@@ -12,8 +12,11 @@ def main():
     targets = Stocks + BitCoins
     while True:
         for t in targets:
-            t.update()
-            print('%s update target' % datetime.now())
+            try:
+                t.update()
+                print('%s update target' % datetime.now())
+            except Exception as e:
+                print(e)
             time.sleep(random())
         time.sleep(300)
 

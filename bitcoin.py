@@ -15,7 +15,7 @@ class Btc(Target):
         self.trigger = Trigger([("<", 90000), (">", 110000)])
 
     def _extract_value(self, text):
-        m = re.compile('\d{5}.\d{2}')
+        m = re.compile('\d+\.\d{2}')
         return float(m.search(text).group(0))
 
 
@@ -34,4 +34,6 @@ class Usdt(Target):
         return float(m.search(text[beg:end]).group(0))
 
 
-BitCoins = [Btc(), Usdt()]
+BitCoins = [
+# Btc(), 
+Usdt()]

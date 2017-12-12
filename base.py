@@ -30,12 +30,20 @@ class Target:
 
     def update(self):
         cur_val = self._get_from_source()
+        if not self._is_val_valid(cur_val):
+            print('%s %s %s is invalid' % (datetime.now(), self.name, cur_val))
+            return
         client = MongoClient('mongodb://192.168.1.100:27017')
         db = client.sentinel
         db[self.name].insert_one({'timestamp': datetime.now(),
                                   'value': cur_val})
         if self.trigger.triggered(cur_val):
             self._action(cur_val)
+        else:
+            print('%s save %s %s' % (datetime.now(), self.name, cur_val))
+
+    def _is_val_valid(self, val):
+        return val > 0.
 
     def _get_from_source(self):
         user_agent = 'Mozilla/5.0 (Windows NT 6.1; Win64; x64)'
@@ -50,4 +58,4 @@ class Target:
 
     def _action(self, cur_val):
         send_mail('%s %s' % (self.name, cur_val), '')
-        print('%s %s' % (self.name, cur_val))
+        print('%s update %s %s' % (datetime.now(), self.name, cur_val))

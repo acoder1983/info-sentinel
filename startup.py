@@ -9,12 +9,11 @@ from stock import Stocks
 
 
 def main():
-    targets = Stocks + BitCoins
+    targets = BitCoins#+Stocks
     while True:
         for t in targets:
             try:
                 t.update()
-                print('%s update target' % datetime.now())
             except Exception as e:
                 print(e)
             time.sleep(random())

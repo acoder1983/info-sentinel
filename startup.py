@@ -35,22 +35,22 @@ def run():
 
 
 def run_as_daemon():
-    p = multiprocessing.Process(target=run)
-    p.start()
-    time.sleep(3)
-    with open('pid') as f:
-        text = f.read()
+    p = None
+    with open('pid', 'w') as f:
+        text = 'init'
+        f.write(text)
     while True:
-        time.sleep(INTERVAL * 3)
         with open('pid') as f:
             t = f.read()
         if t != text:
             text = t
         else:
-            print('%s terminating daemon' % datetime.now())
-            p.terminate()
+            if p is not None:
+                print('%s terminating daemon' % datetime.now())
+                p.terminate()
             p = multiprocessing.Process(target=run)
             p.start()
+        time.sleep(INTERVAL * 3)
 
 
 if __name__ == '__main__':

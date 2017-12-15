@@ -8,6 +8,7 @@ from bitcoin import BitCoins
 from stock import Stocks
 import multiprocessing
 import sys
+import traceback
 
 
 def main(args):
@@ -30,6 +31,7 @@ def run():
                 t.update()
             except Exception as e:
                 print(e)
+                traceback.print_exc()
             time.sleep(random())
         time.sleep(INTERVAL)
 

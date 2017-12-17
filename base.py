@@ -14,8 +14,8 @@ class Trigger:
 
     def triggered(self, cur_val):
         for cv in self.cond_values:
-            if (cv[0] == "<" and cur_val <= cv[1]) or \
-                    (cv[0] == ">" and cur_val >= cv[1]):
+            if (cv[0] == "<" and cur_val < cv[1]) or \
+                    (cv[0] == ">" and cur_val > cv[1]):
                 return True
         return False
 
@@ -60,3 +60,4 @@ class Target:
 
     def _action(self, cur_val):
         send_mail('%s %s' % (self.name, cur_val), '')
+        print('%s mailed %s %s' % (datetime.now(), self.name, cur_val))

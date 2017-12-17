@@ -20,7 +20,7 @@ class Btc(Target):
 class Usdt(Target):
 
     def __init__(self):
-        Target.__init__(self,'huobi-usdt',"https://otc.huobi.pro/trade/list.html?coin=2&type=1",300,Trigger([("<", 6.9)]))
+        Target.__init__(self,'huobi-usdt',"https://otc.huobi.pro/trade/list.html?coin=2&type=1",300,Trigger([("<", 6.85)]))
 
     def _extract_value(self, text):
         beg = text.find('/USDT<')

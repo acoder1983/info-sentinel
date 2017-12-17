@@ -24,31 +24,31 @@ class Stock(Target):
 class Hzsy(Stock):
     def __init__(self):
         Stock.__init__(self, 'stock-hzsy', 300,
-                       Trigger([("<", 7.0), (">", 8.5)]), 'SSE600191')
+                       Trigger([["<", 7.0], [">", 8.5]]), 'SSE600191')
 
 
 class Qsgf(Stock):
     def __init__(self):
         Stock.__init__(self, 'stock-qsgf', 300,
-                       Trigger([("<", 4.5), (">", 5.3)]), 'SZSE002638')
+                       Trigger([["<", 4.5], [">", 5.3]]), 'SZSE002638')
 
 
 class Zygf(Stock):
     def __init__(self):
         Stock.__init__(self, 'stock-zygf', 300,
-                       Trigger([("<", 7.5), (">", 8.6)]), 'SSE600770')
+                       Trigger([["<", 7.5], [">", 8.6]]), 'SSE600770')
 
 
 class Jnjj(Stock):
     def __init__(self):
         Stock.__init__(self, 'stock-jnjj', 300,
-                       Trigger([("<", 40)]), 'SSE601313')
+                       Trigger([["<", 40]]), 'SSE601313')
 
 
 class Shgf(Stock):
     def __init__(self):
         Stock.__init__(self, 'stock-shgf', 300,
-                       Trigger([("<", 11.0), (">", 13.0)]), 'SZSE000014')
+                       Trigger([["<", 11.0], [">", 13.0]]), 'SZSE000014')
 
 
 Stocks = [Hzsy(), Qsgf(), Zygf(), Jnjj(), Shgf()]

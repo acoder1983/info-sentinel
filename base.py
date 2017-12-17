@@ -16,6 +16,7 @@ class Trigger:
         for cv in self.cond_values:
             if (cv[0] == "<" and cur_val < cv[1]) or \
                     (cv[0] == ">" and cur_val > cv[1]):
+                cv[1] = cur_val
                 return True
         return False
 

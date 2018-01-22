@@ -4,6 +4,7 @@
 from bitcoin import Btc
 from bitcoin import Usdt
 from stock import Hzsy
+from yahoo import Sbgx103
 
 def test_get_usdt_price():
     f = open('usdt.html','rb')
@@ -22,3 +23,9 @@ def test_get_stock_price():
     t = str(f.read())
     s = Hzsy()
     assert(50.3 == s._extract_value(t))
+
+def test_get_sbgx103():
+    f = open('sbgx061.html','rb')
+    t = str(f.read())
+    s = Sbgx103()
+    assert(21 == s._extract_value(t))

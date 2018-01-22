@@ -51,4 +51,8 @@ class Shgf(Stock):
                        Trigger([["<", 11.0], [">", 13.0]]), 'SZSE000014')
 
 
-Stocks = [Hzsy(), Qsgf(), Zygf(), Jnjj(), Shgf()]
+Stocks = [
+# Hzsy(), 
+Qsgf(), 
+# Zygf(), Jnjj(), Shgf()
+]

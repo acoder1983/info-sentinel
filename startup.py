@@ -6,6 +6,7 @@ from random import random
 
 from bitcoin import BitCoins
 from stock import Stocks
+from yahoo import Yahoos
 import multiprocessing
 import sys
 import traceback
@@ -22,7 +23,7 @@ INTERVAL = 300
 
 
 def run():
-    targets = BitCoins + Stocks
+    targets = Yahoos + Stocks
     while True:
         with open('pid', 'w') as f:
             f.write(str(datetime.now()))
